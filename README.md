@@ -8,12 +8,20 @@ Here is our rock paper scissors CLI game. To play, first run `node index.js`, an
 After you type one of these into the terminal, the computer will pick randomly and will tell you if you were beaten, you won, or the game was a draw. You can then choose another input. 
 After the first round, you will be asked if you want to play again and to input another choice. If you win or lose, the computer will ask you if you'd like to play again. Answering with `yes` will start the program again, and answering with `no` will close the program.
 
+## Blackjack
+
+We've also made a blackjack game. When you run `node blackjack.js`, you will be given 2 random cards. If the cards are under 21, you will be prompted to `Hit or stand`. If you choose `Hit` you will be given another random card. This can continue until either you hit 21 or you go over. If you hit 21, you win the game. If you go over, you lose.
+
+At the moment the dealer function is not working as intended. Ideally the dealer would get a random card when you first play, and after you choose `stand` would be given more cards until they hit 21 (and you lose) or they go over 21, at which point you win.
+
+
 
 
 ## Technologies
 - JavaScript Callback API
     - Class: readliine.Interface (to receive user input from CLI). (ref: https://nodejs.org/docs/latest-v22.x/api/readline.html#class-readlineinterface )
 - JavaScript `node` to run the program.
+- How the game `Blackjack` works: https://freegames.org/blackjack/
 
 
 
