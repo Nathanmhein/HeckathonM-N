@@ -8,14 +8,15 @@ const rl = readline.createInterface({
 rl.question(`Rock, Paper, Scissor Go! `, RPS);
 
 function playNext (userAnswer) {
-    if (userAnswer === "yes") {
+    userAnswer = userAnswer.toLowerCase()
+    if (userAnswer === "y") {
       rl.question(`Rock, Paper, Scissor Go! `, RPS);
-       
-
-    } else {
+    } else if (userAnswer === "n") {
         rl.close();
+    } else {
+       rl.question(`Play Again? (y/n)`,playNext)
     }
-1
+
 }
 
 function RPS(userChoice){
@@ -27,26 +28,26 @@ function RPS(userChoice){
        if (userInput === compRandom) {
             console.log("Draw!")
             rl.question(`Rock, Paper, Scissor Go! `, RPS);
-            rl.question(`Play Again? (yes/no)`,playNext);
+            rl.question(`Play Again? (y/n)`,playNext);
                 
         } else if (userInput === "rock" && compRandom === "scissors") {
             console.log(`Computer chose ${compRandom} - You win!`)
-            rl.question(`Play Again? (yes/no)`,playNext);             
+            rl.question(`Play Again? (y/n) `,playNext);             
         } else if (userInput === "scissors" && compRandom === "paper") {
             console.log(`Computer chose  ${compRandom} - You win!`)
-            rl.question(`Play Again? (yes/no)`,playNext); 
+            rl.question(`Play Again? (y/n) `,playNext); 
         } else if (userInput === "paper" && compRandom === "rock") {
             console.log(`Computer chose ${compRandom} - You win!`)
-            rl.question(`Play Again? (yes/no)`,playNext);
+            rl.question(`Play Again? (y/n) `,playNext);
         } else if (userInput === "rock" && compRandom === "paper") {
             console.log(`Computer chose ${compRandom} - You lose!`)
-            rl.question(`Play Again? (yes/no)`,playNext);
+            rl.question(`Play Again? (y/n) `,playNext);
         } else if (userInput === "scissors" && compRandom === "rock") {
             console.log(`Computer chose ${compRandom} - You lose!`)
-            rl.question(`Play Again? (yes/no)`,playNext);
+            rl.question(`Play Again? (y/n) `,playNext);
         } else if (userInput === "paper" && compRandom === "scissors") {
             console.log(`Computer chose ${compRandom} - You lose!`)
-            rl.question(`Play Again? (yes/no)`,playNext);
+            rl.question(`Play Again? (y/n) `,playNext);
         } else {
             console.log("You must choose rock, paper or scissors")
             rl.question(`Rock, Paper, Scissor Go! `, RPS)
@@ -56,10 +57,5 @@ function RPS(userChoice){
 }
 
 
-//console.log(RPS('rock'));
 
-// user would put in rock, paper or scissors
-// computer would pick a random from an array of 3, 
-// in the function, it would say that if a user picked rock and the computer picked
-// scissors, it would console log out "You won"
-// repeat for each combination
+
